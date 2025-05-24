@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans text-neutral-800 bg-neutral-50;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold leading-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  h5 {
+    @apply text-lg md:text-xl;
+  }
+
+  h6 {
+    @apply text-base md:text-lg;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-md font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-200 relative overflow-hidden;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500;
+  }
+
+  .btn-secondary {
+    @apply btn bg-secondary-500 text-white hover:bg-secondary-600 focus:ring-secondary-500;
+  }
+
+  .btn-accent {
+    @apply btn bg-accent-500 text-white hover:bg-accent-600 focus:ring-accent-500;
+  }
+
+  .btn-outline {
+    @apply btn bg-transparent border border-primary-500 text-primary-500 hover:bg-primary-50;
+  }
+
+  .ripple {
+    @apply absolute bg-white/30 rounded-full transform -translate-x-1/2 -translate-y-1/2 animate-ripple;
+  }
+
+  .card {
+    @apply rounded-xl p-6 transition-all duration-300;
+  }
+
+  .card-glass {
+    @apply card bg-white/70 backdrop-blur-md border border-white/20 shadow-lg hover:shadow-xl;
+  }
+
+  .input {
+    @apply w-full px-4 py-2 rounded-md border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-primary {
+    @apply badge bg-primary-100 text-primary-800;
+  }
+
+  .badge-secondary {
+    @apply badge bg-secondary-100 text-secondary-800;
+  }
+
+  .badge-accent {
+    @apply badge bg-accent-100 text-accent-800;
+  }
+
+  .badge-success {
+    @apply badge bg-success-100 text-success-800;
+  }
+
+  .badge-warning {
+    @apply badge bg-warning-100 text-warning-800;
+  }
+
+  .badge-error {
+    @apply badge bg-error-100 text-error-800;
+  }
+}
+
+.whatsapp-chat {
+  @apply max-w-md mx-auto rounded-lg overflow-hidden;
+}
+
+.whatsapp-header {
+  @apply bg-primary-600 text-white p-4 flex items-center space-x-3;
+}
+
+.whatsapp-messages {
+  @apply p-4 bg-[#e5ddd5] bg-opacity-50 h-96 overflow-y-auto space-y-3;
+}
+
+.message {
+  @apply max-w-xs rounded-lg p-3 relative;
+}
+
+.message-received {
+  @apply message bg-white;
+}
+
+.message-sent {
+  @apply message bg-primary-100 ml-auto;
+}
+
+.whatsapp-input {
+  @apply bg-white p-3 flex items-center space-x-2;
+}
+
+/* Glassmorphism styles */
+.glass {
+  @apply bg-white bg-opacity-20 backdrop-blur-lg border border-white border-opacity-20 shadow-lg;
+}
+
+.float-in {
+  animation: floatIn 0.5s ease-out forwards;
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.parallax-container {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 1px;
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.parallax-background {
+  transform: translateZ(-1px) scale(2);
+}
+
+.parallax-content {
+  transform: translateZ(0);
+}
